@@ -5,6 +5,8 @@ project(poco-http-server)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
 add_executable(poco-http-server
+    src/handlers/Factory.cpp
+    src/handlers/Ping.cpp
     src/main.cpp
     src/Server.cpp
 )
