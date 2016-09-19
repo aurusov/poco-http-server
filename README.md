@@ -1,4 +1,9 @@
-Один раз генерим Makefile
+# Подготовка
+- cобрать [Poco](https://github.com/aurusov/raox/wiki/Poco)
+- поставить cmake `sudo apt-get install cmake`
+- поставить [Eclipse IDE for C/C++ Developers](http://www.eclipse.org/downloads/packages/) или любую другую IDE
+
+# Один раз генерим Makefile
 ```
 git clone git@github.com:aurusov/poco-http-server.git
 cd poco-http-server
@@ -7,22 +12,27 @@ cd build
 cmake ..
 ```
 
-Для [Eclipse IDE for C/C++ Developers](http://www.eclipse.org/downloads/packages/) настраиваем один раз проект
+# Для Eclipse IDE for C/C++ Developers настраиваем один раз проект
+- `Window - Preferences`
+  - `Workspace - Save automatically before build` = `on`
+  - `Indexer`
+    - `Index all header variants` = `on`
+    - `Index source and header files opened in editor` = `on`
 - `Window - Preferences - Workspace - Save automatically before build` = `on`
 - `File - Import - C/C++ - Existing Code as Makefile Project - Next`
 - `Existing code location` = *путь к корню скаченных исходников*
 - `Toolchain for Indexer Settings` = `Linux GCC`
 - `Finish`
 - `Project - Properties - C/C++ Build`
- - `Builder Settings - Build Directory` = `${workspace_loc:/poco-http-server/build}/`
- - `Behavior - Enable parallel build` = `on`
+  - `Builder Settings - Build Directory` = `${workspace_loc:/poco-http-server}/build`
+  - `Behavior - Enable parallel build` = `on`
 - `Project - Build All`
-- `Run - Profile Configurations - poco-http-server Default - Main`
-  - `C/C++ Applications` = *путь к корню скаченных исходников*`/build/poco-http-server`
-  - `Disable auto build` = `on`
+- `Run - Profile Configurations - C/C++ Application - New launch configuration - poco-http-server Default - Main`
+   - `C/C++ Applications` = *путь к корню скаченных исходников*`/build/poco-http-server`
+   - `Disable auto build` = `on`
 - `Run`
 
-Проверим работу сервера из консоли
+# Проверим работу сервера из консоли
 ```
 curl localhost:5849/ping -v
 ```
