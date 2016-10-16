@@ -9,6 +9,9 @@ dist: trusty
 os: linux
 compiler: gcc
 
+install:
+  - sudo apt-get install libpoco-dev
+
 script:
   - mkdir build
   - cd build
