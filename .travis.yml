@@ -1,0 +1,16 @@
+git:
+    submodules: false
+
+language: cpp
+
+sudo: required
+dist: trusty
+
+os: linux
+compiler: gcc
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
